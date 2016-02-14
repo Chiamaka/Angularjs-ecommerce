@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="input-group input-group-merge input-hero mb30">
+    <span class="has-success input-group-addon "><i class="fa fa-search"></i></span>
+    <input type="text" id="icon-filter" class="form-control" placeholder="Search" ng-model="searchParam">
+  </div>
+  <br />
+  <div class="row">
+    <a class="col-lg-4 card" ng-repeat= "x in products | filter: searchParam" href="#/more/{{x.id}}">
+      <p class="row text-center" id="name">{{x.name}}</p>
+      <img ng-src="{{x.photo}}">
+      <div class="row text-center" id="price">
+        {{x.price | currency: " $"}}
+      </div>
+    </a>
+  </div>
+</div>
